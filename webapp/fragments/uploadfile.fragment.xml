@@ -1,0 +1,63 @@
+<core:FragmentDefinition
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:upload="sap.m.upload"
+    xmlns:u="sap.ui.unified"
+>
+    <Dialog
+
+        afterClose="onCancelAttach"
+    >
+        <endButton>
+            <Button
+                text="Cancel"
+                press="onCancelAttach"
+            />
+        </endButton>
+        <VBox>
+            <smarttable:SmartTable
+                entitySet="DocAttachmentsSet"
+                initiallyVisibleFields="SiteCode,SubjectId,FileName,AttachName"
+                tableBindingPath="SubRegDocAttNav"
+                enableAutoBinding="true"
+                beforeRebindTable="onSmartTableBeforeRebindTable"
+            >
+                <Table
+                    selectionChange="change"
+                    mode="MultiSelect"
+                >
+                    <ColumnListItem
+                        type="Active"
+                        press="clickfile"
+                    />
+                </Table>
+
+                <smarttable:customToolbar>
+                    <Toolbar>
+                        <ToolbarSpacer />
+                        <u:FileUploader
+                            icon="sap-icon://attachment"
+                            buttonOnly="true"
+                            buttonText=" "
+                            change="onSubmitAttachments"
+                            useMultipart="false"
+                         
+                            name="myFileUpload"
+                            uploadStart="onBeforeUploadStarts"
+                            uploadComplete="onUploadComplete"
+                            tooltip="Upload your file to the local server"
+                            uploadUrl="/sap/opu/odata/sap/ZGW_PPTSUBREG_SRV/DocAttachmentsSet"
+                        />
+
+                        <Button
+                            enabled="false"
+                            icon="sap-icon://delete"
+                            press="delete"
+                        />
+                    </Toolbar>
+                </smarttable:customToolbar>
+            </smarttable:SmartTable>
+        </VBox>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,59 @@
+<mvc:View
+    xmlns:uxap="sap.uxap"
+    xmlns:f="sap.f"
+    controllerName="registration.controller.registration"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <!-- <smartfilterbar:SmartFilterBar
+                id="smartFilterBar"
+                entitySet="SubRegHeaderSet"
+                persistencyKey="SmartFilter_Explored"
+                basicSearchFieldName="SiteCode"
+                enableBasicSearch="true"
+                useToolbar="true"
+                visible="true"
+            /> -->
+
+            <smarttable:SmartTable
+                smartFilterId="smartFilterBar"
+                initiallyVisibleFields="SiteCode,SubjectId,SiteDesc,RegNo,SubjectName,SubjectInitials"
+                enableAutoBinding="true"
+                entitySet="SubRegHeaderSet"
+            >
+                <Table
+                    selectionChange="change"
+                    mode="MultiSelect"
+                >
+                    <ColumnListItem
+                        type="Navigation"
+                        press="subReg"
+                    />
+                </Table>
+
+                <smarttable:customToolbar>
+                    <Toolbar>
+                        <ToolbarSpacer />
+                        <Button
+                            icon="sap-icon://add"
+                            press="addForm"
+                        />
+                        <Button
+                            enabled="false"
+                            icon="sap-icon://delete"
+                            press="delete"
+                        />
+                    </Toolbar>
+                </smarttable:customToolbar>
+            </smarttable:SmartTable>
+        </content>
+    </Page>
+</mvc:View>

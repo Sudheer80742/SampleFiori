@@ -1,0 +1,37 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+>
+    <Dialog>
+        <Table
+            id="table1"
+            items="{/ZppshGenderSet}"
+        >
+            <columns>
+                <Column>
+                    <Text text="Id" />
+                </Column>
+                <Column>
+                    <Text text="Gender" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem
+                    type="Active"
+                    press="onColumnListItemPress"
+                >
+                    <cells>
+                        <Text text="{Id}" />
+                        <Text text="{Gender}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <endButton>
+            <Button
+                press="onCancel"
+                text="Cancel"
+            />
+        </endButton>
+    </Dialog>
+</c:FragmentDefinition>

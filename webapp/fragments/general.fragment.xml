@@ -1,0 +1,197 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:u="sap.ui.unified"
+>
+    <smartForm:SmartForm
+        editable="{data>/edit}"
+        id="addSForm"
+    >
+        <smartForm:layout>
+            <smartForm:ColumnLayout
+                columnsM="2"
+                columnsL="3"
+                columnsXL="4"
+            />
+        </smartForm:layout>
+        <smartForm:Group>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{SiteCode}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{SiteDesc}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField value="{SubjectId}" />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    editable="false"
+                    value="{RegNo}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="autoInitl"
+                    value="{SubjectName}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    editable="false"
+                    value="{SubjectInitials}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{SurName}"
+                />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="autoInitl"
+                    value="{FatSurname}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    value="{MotSurname}"
+                    change="autoInitl"
+                />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    value="{Dob}"
+                    change="Calculatedob"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    editable="false"
+                    value="{Age}"
+                />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement>
+                <smartField:SmartField value="{Gender}" />
+                <!-- <Input valueHelpRequest="onGenderInputValueHelp"  editable="{data>/edit}"  showValueHelp="true" value="{Gender}"></Input> -->
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{Ethnicity}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{EthOthers}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{HighGrdStdy}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{Occupation}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField value="{Languages}" />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField value="{Nationality}" />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField value="{NatIdfNo}" />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="calculateBMI"
+                    value="{Height}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    value="{Weight}"
+                    change="calculateBMI"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    editable="false"
+                    value="{Bmi}"
+                />
+            </smartForm:GroupElement>
+        </smartForm:Group>
+    </smartForm:SmartForm>
+    <VBox
+        class="sapUiLargeMarginTop"
+        alignItems="Center"
+        alignContent="Center"
+    >
+        <VBox
+            alignItems="Center"
+            alignContent="Center"
+        >
+            <!-- <Image
+                id="imgsrc"
+                class="barcode"
+            />
+            <Button
+                text="PrintID"
+                press="dowloadBarcode"
+            /> -->
+
+            <Image
+                class="sapUiLargeMarginTop"
+                id="capturedImage"
+                width="160px"
+                height="160px"
+                visible="true"
+                src="{ImageUrl}"
+            />
+            <!-- src="/sap/opu/odata/sap/ZGW_PPTSUBREG_SRV/DocAttachmentsSet(AttachNo='009',Sitecode='S009',Subjectid='009')/$value" -->
+
+            <Button
+                id="openCameraButton"
+                text="CaptureImage"
+                press="onOpenCamera"
+            />
+            <!-- <Button
+                tooltip="Image"
+                icon="sap-icon://attachment"
+                text="upload"
+                press="onUpload"
+                type="Transparent"
+            /> -->
+            <u:FileUploader
+                tooltip="Image"
+                icon="sap-icon://attachment"
+                buttonOnly="true"
+                buttonText=" "
+                change="onSubmitAttachments"
+                useMultipart="false"
+                name="myFileUpload"
+                uploadStart="onBeforeUploadStarts"
+                uploadComplete="onUploadComplete"
+                uploadUrl="/sap/opu/odata/sap/ZGW_PPTSUBREG_SRV/DocAttachmentsSet"
+            />
+        </VBox>
+    </VBox>
+</c:FragmentDefinition>

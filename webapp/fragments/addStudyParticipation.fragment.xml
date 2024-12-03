@@ -1,0 +1,59 @@
+<!-- SiteCode,SubjectId,ProjectNo,SubjectNo,ProjectStatus,AEInfo" -->
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:upload="sap.m.upload"
+>
+    <Dialog title="Add Study Participation History">
+        <smartForm:SmartForm editable="true">
+            <smartForm:layout>
+                <smartForm:ColumnLayout
+                    columnsM="2"
+                    columnsL="3"
+                    columnsXL="4"
+                />
+            </smartForm:layout>
+            <smartForm:Group>
+                <smartForm:GroupElement>
+                    <smartField:SmartField value="{SiteCode}" />
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField value="{SubjectId}" />
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField value="{ProjectNo}" />
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField value="{SubjectNo}" />
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField
+                        change="capitalizeFirstLetter"
+                        value="{ProjectStatus}"
+                    />
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <smartField:SmartField
+                        change="capitalizeFirstLetter"
+                        value="{AEInfo}"
+                    />
+                </smartForm:GroupElement>
+            </smartForm:Group>
+        </smartForm:SmartForm>
+        <beginButton>
+            <Button
+                type="Emphasized"
+                text="Submit"
+                press="addStudyParticipationHistroy"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                text="Cancel"
+                press="cancel"
+            />
+        </endButton>
+    </Dialog>
+</c:FragmentDefinition>

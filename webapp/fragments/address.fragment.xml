@@ -1,0 +1,68 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns:smartForm="sap.ui.comp.smartform"
+>
+    <smartForm:SmartForm
+        editable="{data>/edit}"
+        id="addressId"
+    >
+        <smartForm:layout>
+            <smartForm:ColumnLayout
+                columnsM="2"
+                columnsL="3"
+                columnsXL="4"
+            />
+        </smartForm:layout>
+        <smartForm:Group>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{Address1}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{Address2}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{Address3}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{City}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{District}"
+                />
+            </smartForm:GroupElement>
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{State}"
+                />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement>
+                <smartField:SmartField value="{ZipCode}" />
+            </smartForm:GroupElement>
+
+            <smartForm:GroupElement>
+                <smartField:SmartField
+                    change="capitalizeFirstLetter"
+                    value="{Country}"
+                />
+            </smartForm:GroupElement>
+        </smartForm:Group>
+    </smartForm:SmartForm>
+</c:FragmentDefinition>

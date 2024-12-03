@@ -1,0 +1,148 @@
+{
+    "_version": "1.60.0",
+    "sap.app": {
+        "id": "registration",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.15.4",
+            "toolsId": "2a9980fc-1083-47dd-90ee-78cf8e56d0cf"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZGW_PPTSUBREG_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [
+                        "annotation0"
+                    ],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "annotation0": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation0.xml",
+                "settings": {
+                    "localUri": "annotations/annotation0.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.120.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "registration.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": true,
+                    "metadataUrlParams": {}
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ],
+            "js": [
+                {
+                    "uri": "util/barcode.js"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "registration.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "Routeregistration",
+                    "pattern": ":?query:",
+                    "target": [
+                        "Targetregistration"
+                    ]
+                },
+                {
+                    "name": "RoutersubjectReg",
+                    "pattern": "subjectReg/{path}",
+                    "target": [
+                        "TargetsubjectReg"
+                    ]
+                }
+            ],
+            "targets": {
+                "Targetregistration": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "registration",
+                    "viewName": "registration"
+                },
+                "TargetsubjectReg": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "subjectReg",
+                    "viewName": "subjectReg"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "registration.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    }
+}

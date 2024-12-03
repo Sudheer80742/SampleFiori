@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGW_PPTSUBREG_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="SubRegHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SiteCode"/>
+                    <PropertyRef Name="SubjectId"/>
+                </Key>
+                <Property Name="EmgCntAdd" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Same as Above"/>
+                <Property Name="Gender" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:label="Gender" sap:filterable="false"/>
+                <Property Name="SurName" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Surname"/>
+                <Property Name="SubjectInitials" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Subject Initials"/>
+                <Property Name="Signature" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Signature"/>
+                <Property Name="ImageUrl" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="IMAGE"/>
+                <Property Name="PrivacyNote" Type="Edm.Int16" Nullable="false" sap:unicode="false" sap:label="Privacy Note"/>
+                <Property Name="SubInfoSht" Type="Edm.Int16" Nullable="false" sap:unicode="false" sap:label="Subject Information"/>
+                <Property Name="AdditnlDoc" Type="Edm.Int16" Nullable="false" sap:unicode="false" sap:label="Additional Documents"/>
+                <Property Name="SubIndentDoc" Type="Edm.Int16" Nullable="false" sap:unicode="false" sap:label="Subject Indentificat"/>
+                <Property Name="Dob" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date of Birth"/>
+                <Property Name="LastScrDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Last Screening Date"/>
+                <Property Name="NextElgbDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Next Eligible Date"/>
+                <Property Name="Height" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" sap:unicode="false" sap:label="Height (in CM)"/>
+                <Property Name="Weight" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="0" sap:unicode="false"/>
+                <Property Name="Bmi" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" sap:unicode="false" sap:label="BMI (KG/M2)"/>
+                <Property Name="SiteCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Site Code" sap:updatable="false"/>
+                <Property Name="SubjectId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Subject ID" sap:updatable="false"/>
+                <Property Name="SiteDesc" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false"/>
+                <Property Name="RegNo" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Registration Number"/>
+                <Property Name="SubjectName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Subject Name / Initi"/>
+                <Property Name="FatSurname" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Father Surname"/>
+                <Property Name="MotSurname" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Mother Surname"/>
+                <Property Name="Age" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Age"/>
+                <Property Name="Ethnicity" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Ethnicity"/>
+                <Property Name="EthOthers" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Ethnicity Others"/>
+                <Property Name="HighGrdStdy" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="High Grade of Study"/>
+                <Property Name="Occupation" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Occupation"/>
+                <Property Name="Languages" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Languages"/>
+                <Property Name="Nationality" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nationality"/>
+                <Property Name="NatIdfNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false"/>
+                <Property Name="Address1" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Address1"/>
+                <Property Name="Address2" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Address 2"/>
+                <Property Name="Address3" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Address3"/>
+                <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="City"/>
+                <Property Name="District" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="District"/>
+                <Property Name="State" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="State / Province"/>
+                <Property Name="ZipCode" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Zip Code"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Country"/>
+                <Property Name="MobNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Mobile Number"/>
+                <Property Name="AltNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Alternate Number"/>
+                <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Email"/>
+                <Property Name="EmgCntName" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false"/>
+                <Property Name="EmgCntNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false"/>
+                <Property Name="RelWithSub" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false"/>
+                <Property Name="EmgAdd1" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label=" Emergency Address 1"/>
+                <Property Name="EmgAdd2" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Emergency Address 2"/>
+                <Property Name="EmgAdd3" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Emergency Address 3"/>
+                <Property Name="EmgCity" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Emergency City"/>
+                <Property Name="EmgDist" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Emergency District"/>
+                <Property Name="EmgState" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Emergency State / Pr"/>
+                <Property Name="EmgZip" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Emergency Zip Code"/>
+                <Property Name="EmgCountry" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Emergency Country"/>
+                <Property Name="SubIdOthers" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Subject id Others"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Status"/>
+                <Property Name="SrcRemarks" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="Remarks"/>
+                <Property Name="Remarks" Type="Edm.String" Nullable="false" MaxLength="500" sap:unicode="false" sap:label="Remarks"/>
+                <NavigationProperty Name="SubRegStudyPHNav" Relationship="ZGW_PPTSUBREG_SRV.SubRegStudyPHNav" FromRole="FromRole_SubRegStudyPHNav" ToRole="ToRole_SubRegStudyPHNav"/>
+                <NavigationProperty Name="SubRegDocAttNav" Relationship="ZGW_PPTSUBREG_SRV.SubRegDocAttNav" FromRole="FromRole_SubRegDocAttNav" ToRole="ToRole_SubRegDocAttNav"/>
+            </EntityType>
+            <EntityType Name="StudyParticipationH" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SiteCode"/>
+                    <PropertyRef Name="SubjectId"/>
+                    <PropertyRef Name="ProjectNo"/>
+                </Key>
+                <Property Name="SiteCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Site Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SubjectId" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Subject ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProjectNo" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Project Number" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SubjectNo" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Subject Number" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProjectStatus" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Project Status" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AEInfo" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="AE Information" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="DocAttachments" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="AttachNo"/>
+                    <PropertyRef Name="Sitecode"/>
+                    <PropertyRef Name="Subjectid"/>
+                </Key>
+                <Property Name="AttachNo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Attach_No" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sitecode" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Site Code" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Subjectid" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Subject ID" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Fichero" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MimeType" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Tipo MIME" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsDeleted" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ObjectType" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Tipo objeto" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Data" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZppshGender" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Byte" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Gender" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="SubRegDocAttNav" sap:content-version="1">
+                <End Type="ZGW_PPTSUBREG_SRV.SubRegHeader" Multiplicity="1" Role="FromRole_SubRegDocAttNav"/>
+                <End Type="ZGW_PPTSUBREG_SRV.DocAttachments" Multiplicity="*" Role="ToRole_SubRegDocAttNav"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SubRegDocAttNav">
+                        <PropertyRef Name="SubjectId"/>
+                        <PropertyRef Name="SiteCode"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SubRegDocAttNav">
+                        <PropertyRef Name="Subjectid"/>
+                        <PropertyRef Name="Sitecode"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SubRegStudyPHNav" sap:content-version="1">
+                <End Type="ZGW_PPTSUBREG_SRV.SubRegHeader" Multiplicity="1" Role="FromRole_SubRegStudyPHNav"/>
+                <End Type="ZGW_PPTSUBREG_SRV.StudyParticipationH" Multiplicity="*" Role="ToRole_SubRegStudyPHNav"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SubRegStudyPHNav">
+                        <PropertyRef Name="SubjectId"/>
+                        <PropertyRef Name="SiteCode"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SubRegStudyPHNav">
+                        <PropertyRef Name="SubjectId"/>
+                        <PropertyRef Name="SiteCode"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZGW_PPTSUBREG_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SubRegHeaderSet" EntityType="ZGW_PPTSUBREG_SRV.SubRegHeader" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="StudyParticipationHSet" EntityType="ZGW_PPTSUBREG_SRV.StudyParticipationH" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="DocAttachmentsSet" EntityType="ZGW_PPTSUBREG_SRV.DocAttachments" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZppshGenderSet" EntityType="ZGW_PPTSUBREG_SRV.ZppshGender" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="SubRegStudyPHNavSet" Association="ZGW_PPTSUBREG_SRV.SubRegStudyPHNav" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SubRegHeaderSet" Role="FromRole_SubRegStudyPHNav"/>
+                    <End EntitySet="StudyParticipationHSet" Role="ToRole_SubRegStudyPHNav"/>
+                </AssociationSet>
+                <AssociationSet Name="SubRegDocAttNavSet" Association="ZGW_PPTSUBREG_SRV.SubRegDocAttNav" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SubRegHeaderSet" Role="FromRole_SubRegDocAttNav"/>
+                    <End EntitySet="DocAttachmentsSet" Role="ToRole_SubRegDocAttNav"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="https://vhahfds4ci.sap.avantsante.com:44300/sap/opu/odata/sap/ZGW_PPTSUBREG_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://vhahfds4ci.sap.avantsante.com:44300/sap/opu/odata/sap/ZGW_PPTSUBREG_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

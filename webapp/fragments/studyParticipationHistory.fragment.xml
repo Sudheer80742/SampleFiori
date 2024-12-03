@@ -1,0 +1,36 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+    <smarttable:SmartTable
+        id="studyPH"
+        tableBindingPath="SubRegStudyPHNav"
+        editable="{data>/edit}"
+        app:useSmartField="true"
+        initiallyVisibleFields="SiteCode,SubjectId,ProjectNo,SubjectNo,ProjectStatus,AEInfo"
+        enableAutoBinding="true"
+        entitySet="StudyParticipationHSet"
+    >
+        <Table
+            selectionChange="change"
+            mode="MultiSelect"
+        />
+
+        <smarttable:customToolbar>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button
+                    icon="sap-icon://add"
+                    press="addForm"
+                />
+                <Button
+                    enabled="false"
+                    icon="sap-icon://delete"
+                    press="delete"
+                />
+            </Toolbar>
+        </smarttable:customToolbar>
+    </smarttable:SmartTable>
+</c:FragmentDefinition>

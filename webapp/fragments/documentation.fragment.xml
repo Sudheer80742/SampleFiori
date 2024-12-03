@@ -1,0 +1,110 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+>
+    <form:SimpleForm
+        layout="ColumnLayout"
+        columnsM="2"
+        columnsL="3"
+        columnsXL="4"
+        editable="false"
+    >
+        <Label text="{/#SubRegHeader/PrivacyNote/@sap:label}" />
+        <RadioButtonGroup
+            selectedIndex="{PrivacyNote}"
+            columns="2"
+        >
+            <RadioButton
+                editable="{data>/edit}"
+                text="No"
+            />
+            <RadioButton
+                editable="{data>/edit}"
+                text="Yes"
+            />
+        </RadioButtonGroup>
+        <Button
+            width="1rem"
+            tooltip="PrivacyNote"
+            icon="sap-icon://attachment"
+            press="onUpload"
+            visible="{=${PrivacyNote}===1?true:false}"
+            type="Transparent"
+        />
+        <Label text="{/#SubRegHeader/SubInfoSht/@sap:label}" />
+        <RadioButtonGroup
+            selectedIndex="{SubInfoSht}"
+            columns="2"
+        >
+            <RadioButton
+                editable="{data>/edit}"
+                text="No"
+            />
+            <RadioButton
+                editable="{data>/edit}"
+                text="Yes"
+            />
+        </RadioButtonGroup>
+        <Button
+            width="1rem"
+            tooltip="SubInfoSht"
+            icon="sap-icon://attachment"
+            press="onUpload"
+            type="Transparent"
+            visible="{=${SubInfoSht}===1?true:false}"
+        />
+        <Label text="{/#SubRegHeader/AdditnlDoc/@sap:label}" />
+        <RadioButtonGroup
+            selectedIndex="{AdditnlDoc}"
+            columns="2"
+        >
+            <RadioButton
+                editable="{data>/edit}"
+                text="No"
+            />
+            <RadioButton
+                editable="{data>/edit}"
+                text="Yes"
+            />
+        </RadioButtonGroup>
+        <Button
+            width="1rem"
+            tooltip="AdditnlDoc"
+            icon="sap-icon://attachment"
+            press="onUpload"
+            visible="{=${AdditnlDoc}===1?true:false}"
+            type="Transparent"
+        />
+
+        <Label text="{/#SubRegHeader/SubIndentDoc/@sap:label}" />
+        <RadioButtonGroup
+            selectedIndex="{SubIndentDoc}"
+            columns="2"
+        >
+            <RadioButton
+                editable="{data>/edit}"
+                text="No"
+            />
+            <RadioButton
+                editable="{data>/edit}"
+                text="Yes"
+            />
+        </RadioButtonGroup>
+        <Button
+            tooltip="SubIndentDoc"
+            width="1rem"
+            icon="sap-icon://attachment"
+            press="onUpload"
+            visible="{=${SubIndentDoc}===1?true:false}"
+            type="Transparent"
+        />
+        <Label text="{/#SubRegHeader/SubIdOthers/@sap:label}" />
+
+        <Input
+            change="capitalizeFirstLetter"
+            editable="{data>/edit}"
+            value="{SubIdOthers}"
+        />
+    </form:SimpleForm>
+</c:FragmentDefinition>

@@ -1,0 +1,53 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:u="sap.ui.unified"
+>
+    <VBox
+        alignItems="Center"
+        alignContent="Center"
+    >
+        <Image
+            id="signature"
+            width="300px"
+            height="150px"
+            visible="true"
+            src="{Signature}"
+        />
+        <Button
+            id="Signature"
+            text="Signature"
+            type="Emphasized"
+            press="onSign"
+        />
+        <!-- <Button
+            tooltip="Signature"
+            icon="sap-icon://attachment"
+            text="upload"
+            press="onUpload"
+            type="Transparent"
+        /> -->
+ <u:FileUploader
+                tooltip="Signature"
+                icon="sap-icon://attachment"
+                buttonOnly="true"
+                buttonText=" "
+                change="onSubmitAttachments"
+                useMultipart="false"
+                name="myFileUpload"
+                uploadStart="onBeforeUploadStarts"
+                uploadComplete="onUploadComplete"
+                uploadUrl="/sap/opu/odata/sap/ZGW_PPTSUBREG_SRV/DocAttachmentsSet"
+            />
+    </VBox>
+    <!--  <VBox alignItems="Center" alignContent="Center">
+            <VBox id="barcodeContainer"> </VBox>
+                <Image id="barcodeImg" src="{printId}" />
+                <Button
+                    id="barCode"
+                    text="Print ID"
+                    press="onGenerateBarcode"
+                />
+           </VBox>  -->
+</core:FragmentDefinition>

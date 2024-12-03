@@ -1,0 +1,25 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+>
+    <Dialog id="sign">
+        <VBox id="html" />
+        <VBox>
+            <HBox>
+                <Button
+                    id="Save"
+                    text="Save"
+                    type="Accept"
+                    press="saveButton"
+                />
+                <Button
+                    id="clear"
+                    text="Cancel"
+                    type="Reject"
+                    press="clearButton"
+                />
+            </HBox>
+        </VBox>
+    </Dialog>
+</core:FragmentDefinition>
